@@ -30,6 +30,13 @@ speakable.speak();
 speakable = new Cat();
 speakable.speak();
 
+let speakableArray:ISpeakable[];
+speakableArray.push(new Dog());
+speakableArray.push(new Cat());
+for(var i=0;i<speakableArray.length;i++){
+    speakableArray[i].speak();
+}
+
 //--------------------------------------------------------------------
 // Arrays
 //--------------------------------------------------------------------
@@ -46,3 +53,30 @@ console.log(sampleArray2);
 
 //Won't compile
 //sampleArray2.push("x");
+
+var mrPresident = Object.create(Object.prototype,
+    {
+        name: {
+            value: "Donald",
+            writable: true,
+            enumerable: true,
+            configurable: true
+        },
+        surname: {
+            value: "Trump",
+            writable: true,
+            enumerable: true,
+            configurable: true
+        },
+        "speak": {
+            value: function () {
+                console.log("I'm a winner");
+            },
+            writable: true,
+            enumerable: true,
+            configurable: true
+        }
+    });
+
+console.log(mrPresident);
+mrPresident.speak();
