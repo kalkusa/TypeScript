@@ -2,14 +2,18 @@
 // Polymorphism
 //--------------------------------------------------------------------
 
-interface ISpeakable {
-    speak(): void;
+// interface ISpeakable {
+
+// }
+
+abstract class Animal {
+    speak(): void { }
 }
 
 /**
  * Dog
  */
-class Dog implements ISpeakable {
+class Dog extends Animal {
     speak(): void {
         console.log("Bark");
     }
@@ -18,32 +22,33 @@ class Dog implements ISpeakable {
 /**
  * Cat
  */
-class Cat {
+class Cat extends Animal {
     speak(): void {
         console.log("Meow");
     }
 }
 
-let speakable:ISpeakable;
-speakable = new Dog();
-speakable.speak();
-speakable = new Cat();
-speakable.speak();
+let animal: Animal;
+animal = new Dog();
+animal.speak();
+animal = new Cat();
+animal.speak();
 
-let speakableArray:ISpeakable[];
-speakableArray.push(new Dog());
-speakableArray.push(new Cat());
-for(var i=0;i<speakableArray.length;i++){
-    speakableArray[i].speak();
+//let speakableArray:ISpeakable[];
+let animalArray = new Array<Animal>();
+animalArray.push(new Dog());
+animalArray.push(new Cat());
+for (var i = 0; i < animalArray.length; i++) {
+    animalArray[i].speak();
 }
 
 //--------------------------------------------------------------------
 // Arrays
 //--------------------------------------------------------------------
 
-let sampleArray:number[] = [8,29,1,39,92,10,32,26,12];
-let sampleArray2 = sampleArray.filter(function name(x:any) {
-    if(x>10){
+let sampleArray: number[] = [8, 29, 1, 39, 92, 10, 32, 26, 12];
+let sampleArray2 = sampleArray.filter(function name(x: any) {
+    if (x > 10) {
         return x;
     }
 })
