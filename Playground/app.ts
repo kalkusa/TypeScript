@@ -85,3 +85,11 @@ var mrPresident = Object.create(Object.prototype,
 
 console.log(mrPresident);
 mrPresident.speak();
+
+var person = {
+    name: "Max",
+    surname: "Mad"
+}
+
+//Note - TS marks this error (however compile)
+console.log(person.age);

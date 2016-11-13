@@ -49,7 +49,6 @@ animal.speak();
 var animalArray = new Array();
 animalArray.push(new Dog());
 animalArray.push(new Cat());
-animalArray.push(new Object());
 for (var i = 0; i < animalArray.length; i++) {
     animalArray[i].speak();
 }
@@ -90,3 +89,10 @@ var mrPresident = Object.create(Object.prototype, {
 });
 console.log(mrPresident);
 mrPresident.speak();
+var person = {
+    name: "Max",
+    surname: "Mad"
+};
+//Note - TS marks this error (however compile)
+console.log(person.age);
+//# sourceMappingURL=app.js.map
