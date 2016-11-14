@@ -93,3 +93,16 @@ var person = {
 
 //Note - TS marks this error (however compile)
 console.log(person.age);
+
+//Example of ugly generated 
+
+class Animal2 {
+    constructor(public placeOfbirth: string) {
+    }
+}
+
+class Dog2 extends Animal2{
+    constructor(placeOfBirth: string, public color: string) {
+        super(placeOfBirth);
+    }
+}

@@ -95,4 +95,19 @@ var person = {
 };
 //Note - TS marks this error (however compile)
 console.log(person.age);
+//Example of ugly generated 
+var Animal2 = (function () {
+    function Animal2(placeOfbirth) {
+        this.placeOfbirth = placeOfbirth;
+    }
+    return Animal2;
+}());
+var Dog2 = (function (_super) {
+    __extends(Dog2, _super);
+    function Dog2(placeOfBirth, color) {
+        _super.call(this, placeOfBirth);
+        this.color = color;
+    }
+    return Dog2;
+}(Animal2));
 //# sourceMappingURL=app.js.map
